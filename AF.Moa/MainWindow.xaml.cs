@@ -23,33 +23,30 @@ namespace AF.Moa
     /// </summary>
     public partial class MainWindow : Window
     {
-        PageListParser pages = new PageListParser("./Config/PageList.txt");
-        AutoLoginParser accounts = new AutoLoginParser("./Config/AutoLogin.txt");
+        IEController Controller = null;
+
+        private PageListParser pages = new PageListParser("./Config/PageList.txt");
+        private AutoLoginParser accounts = new AutoLoginParser("./Config/AutoLogin.txt");
 
         public MainWindow()
         {
             InitializeComponent();
-            Browser.Navigate(pages.HomePage);
-            Browser.LoadCompleted += Browser_LoadCompleted;
+            Controller = new IEController(Browser);
+            Controller.LoadCompleted.Add(AutoLogin);
+            Controller.Navigate(pages.HomePage);
         }
 
-        private void Browser_LoadCompleted(object sender, NavigationEventArgs e)
+        private void AutoLogin(NavigationEventArgs e)
         {
-            var document = (IHTMLDocument3)Browser.Document;
-            #region AutoLogin
             foreach (var account in accounts.List)
             {
                 if (e.Uri.ToString() == account.Url)
                 {
-                    ((IHTMLInputElement)document.getElementById(account.IDFormId)).value = account.ID;
-                    ((IHTMLInputElement)document.getElementById(account.PasswordFormId)).value = account.Password;
-                    document.getElementById(account.ConfirmButtonId).click();
+                    Controller.SetValue(account.IDFormId, account.ID);
+                    Controller.SetValue(account.PasswordFormId, account.Password);
+                    Controller.Click(account.ConfirmButtonId);
                 }
             }
-            #endregion
-            #region 게시판 최적화 함수
-
-            #endregion
         }
     }
 }

@@ -10,6 +10,6 @@
         <StackPanel x:Name="Navigator" Orientation="Vertical" Width="100">
             
         </StackPanel>
-        <WebBrowser x:Name="Browser"/>
+        <WebBrowser x:Name="Browser" Width="1000" />
     </StackPanel>
 </Window>
