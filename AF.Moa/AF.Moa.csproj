@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="IEController.cs" />
     <Compile Include="Macro\IMacro.cs" />
+    <Compile Include="Macro\PostHeaderRemover.cs" />
     <Compile Include="Macro\WebMailHelper.cs" />
     <Compile Include="Navigator\NavigatorView.xaml.cs">
       <DependentUpon>NavigatorView.xaml</DependentUpon>
@@ -121,6 +122,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\AutoLogin.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Macro\PostHeaders.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -36,6 +36,7 @@ namespace AF.Moa
             Controller = new IEController(Browser);
             Controller.AddOnLoadCompleted(AutoLogin);
             Controller.AddOnLoadCompleted(new WebMailHelper());
+            Controller.AddOnLoadCompleted(new PostHeaderRemover());
             Controller.Navigate(pages.HomePage);
 
             InitializeNavigator(pages.List);

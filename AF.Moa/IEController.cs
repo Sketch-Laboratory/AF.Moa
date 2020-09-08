@@ -13,7 +13,7 @@ namespace AF.Moa
     class IEController
     {
         private WebBrowser Browser { get; } = null;
-        private IHTMLDocument3 document { get; set; } = null;
+        public IHTMLDocument3 Document { get; private set; } = null;
 
 
         public IEController(WebBrowser browser)
@@ -24,14 +24,14 @@ namespace AF.Moa
 
         private void Browser_LoadCompleted(object sender, NavigationEventArgs e)
         {
-            document = (IHTMLDocument3)Browser.Document;
+            Document = (IHTMLDocument3)Browser.Document;
             foreach (var function in LoadCompletedFunctions) function(e);
             foreach (var macro in LoadCompletedMacros) macro.OnPageLoaded(this, e);
         }
 
         public void Navigate(string url)
         {
-            document = null;
+            Document = null;
             Browser.Navigate(url);
         }
 
@@ -67,7 +67,7 @@ namespace AF.Moa
         {
             Handle(delegate
             {
-                var element = document.getElementById(elementId);
+                var element = Document.getElementById(elementId);
                 if(element is IHTMLInputElement)
                 {
                     ((IHTMLInputElement)element).value = value;
@@ -79,7 +79,7 @@ namespace AF.Moa
         {
             Handle(delegate
             {
-                var button = document.getElementById(elementId);
+                var button = Document.getElementById(elementId);
                 button.click();
             });
         }
