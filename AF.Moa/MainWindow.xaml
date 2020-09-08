@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AF.Moa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="AF.Moa" Icon="Resources/icon.png"
+        WindowStartupLocation="CenterScreen"
+        SizeChanged="Window_SizeChanged" 
+        StateChanged="Window_StateChanged"
+        Width="1200" Height="800">
     <StackPanel Orientation="Horizontal">
-        <StackPanel x:Name="Navigator" Orientation="Vertical" Width="100">
-            
-        </StackPanel>
-        <WebBrowser x:Name="Browser" Width="1000" />
+        <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200"></StackPanel>
+        <WebBrowser x:Name="Browser"/>
     </StackPanel>
 </Window>

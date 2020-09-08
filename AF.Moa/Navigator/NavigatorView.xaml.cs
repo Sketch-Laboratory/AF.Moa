@@ -20,9 +20,23 @@ namespace AF.Moa.Navigator
     /// </summary>
     public partial class NavigatorView : UserControl
     {
+        SolidColorBrush defaultBackgroundBrush = new SolidColorBrush(Color.FromArgb(10, 0, 0, 0));
+        SolidColorBrush hoverBackgroundBrush = new SolidColorBrush(Color.FromArgb(80, 0, 0, 0));
+
         public NavigatorView()
         {
             InitializeComponent();
+            this.Background = defaultBackgroundBrush;
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Background = hoverBackgroundBrush;
+        }
+
+        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Background = defaultBackgroundBrush;
         }
     }
 }

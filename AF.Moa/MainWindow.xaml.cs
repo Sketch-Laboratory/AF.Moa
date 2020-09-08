@@ -32,6 +32,8 @@ namespace AF.Moa
         public MainWindow()
         {
             InitializeComponent();
+            this.MinWidth = Navigator.Width * 2;
+            FitBrowserWidth();
             Controller = new IEController(Browser);
             Controller.AddOnLoadCompleted(new ScriptInvoker());
             Controller.AddOnLoadCompleted(new PostHeaderRemover());
@@ -52,6 +54,29 @@ namespace AF.Moa
                 };
                 this.Navigator.Children.Add(view);
             }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            FitBrowserWidth();
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if(this.WindowState == WindowState.Maximized)
+            {
+                /**
+                 * TODO: 최대화 시 화면 크기 에서 Navigator의 Width를 뺀 값으로 설정
+                 * 화면 크기 구해오는 방법 알아내야 함.
+                 */
+            }
+            else  FitBrowserWidth();
+            
+        }
+
+        private void FitBrowserWidth()
+        {
+            Browser.Width = this.Width - Navigator.Width;
         }
     }
 }
