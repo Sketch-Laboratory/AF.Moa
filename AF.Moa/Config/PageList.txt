@@ -11,14 +11,52 @@
 	IT 정보 Q&A=http://www.af.mil/user/boardList.action?boardId=I_7172468&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 휴머니스트=http://www.af.mil/user/indexMain.action?siteId=humanist
 	대화=None
+		Q&A=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 		직업이야기=http://www.af.mil/user/boardList.action?boardId=I_3282180&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 		여행이야기=http://www.af.mil/user/boardList.action?boardId=I_6825140&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 		맛집이야기=http://www.af.mil/user/boardList.action?boardId=I_8637076&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		전역이야기=http://www.af.mil/user/boardList.action?boardId=I_10399265&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	아고라=http://www.af.mil/user/boardList.action?boardId=I_2309707&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-	고민=http://www.af.mil/user/boardList.action?boardId=I_19355202&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-	그리기게시판=http://www.af.mil/user/boardList.action?boardId=I_18192955&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	창작=None
+		짧은 호흡=http://www.af.mil/user/boardList.action?boardId=I_2309652&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		긴 호흡=http://www.af.mil/user/boardList.action?boardId=I_3687157&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		그리기게시판=http://www.af.mil/user/boardList.action?boardId=I_18192955&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		릴레이 창작=http://www.af.mil/user/boardList.action?boardId=I_12881898&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	문화살롱=None
+		음악 게시판=http://www.af.mil/user/boardList.action?boardId=I_10698494&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		운동 게시판(공유)=http://www.af.mil/user/boardList.action?boardId=I_10992214&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		퀴즈 게시판=http://www.af.mil/user/boardList.action?boardId=I_12679700&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		패션 게시판=http://www.af.mil/user/boardList.action?boardId=I_12955136&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		E-sports 게시판=http://www.af.mil/user/boardList.action?boardId=I_8663066&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		금융, 경제 게시판=http://www.af.mil/user/boardList.action?boardId=I_19544304&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		IT게시판=http://www.af.mil/user/boardList.action?boardId=I_20492019&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	연재칼럼=None
+		연재칼럼=http://www.af.mil/user/boardList.action?boardId=I_3683641&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		연재소설=http://www.af.mil/user/boardList.action?boardId=I_3683617&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	Air-Wiki=http://www.af.mil/user/boardList.action?boardId=I_3704853&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	평점=None
+		영화평점=http://www.af.mil/user/boardList.action?boardId=I_2309627&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		나의 서재=http://www.af.mil/user/boardList.action?boardId=I_3683573&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		앨범 음반 평점=http://www.af.mil/user/boardList.action?boardId=I_6825162&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	고민=http://www.af.mil/user/boardList.action?boardId=I_19355202&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	운동장=http://www.af.mil/user/boardList.action?boardId=I_19355263&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent=
 	플리마켓=http://www.af.mil/user/boardList.action?boardId=I_19355278&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+만사마=http://www.af.mil/user/indexMain.action?siteId=mansama
+	자유게시판=http://www.af.mil/user/boardList.action?boardId=I_60476&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	그림게시판=http://www.af.mil/user/boardList.action?boardId=I_15530968&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	문학작품집=None
+		연재게시판=http://www.af.mil/user/boardList.action?boardId=I_211607&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		단편게시판=http://www.af.mil/user/boardList.action?boardId=I_211615&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		세말엮기=http://www.af.mil/user/boardList.action?boardId=I_211623&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		릴레이=http://www.af.mil/user/boardList.action?boardId=I_6257997&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	락야행=http://www.af.mil/user/boardList.action?boardId=I_6047119&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	환락행=http://www.af.mil/user/boardList.action?boardId=I_5751872&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	번역게시판=None
+		번역문학=http://www.af.mil/user/boardList.action?boardId=I_6094080&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		가사번역=http://www.af.mil/user/boardList.action?boardId=I_6094106&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	리뷰게시판=http://www.af.mil/user/boardList.action?boardId=I_213782&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	MSM-Wiki=http://www.af.mil/user/boardList.action?boardId=I_213849&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	QuizQuiz=http://www.af.mil/user/boardList.action?boardId=I_213828&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 기타=None
 	국방인사정보체계=http://hrportal.mhr.mil/
 	웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login

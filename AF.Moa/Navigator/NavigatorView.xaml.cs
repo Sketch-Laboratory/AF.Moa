@@ -29,11 +29,16 @@ namespace AF.Moa.Navigator
         {
             InitializeComponent();
             this.Name.Content = page.PageName;
-            if(page.PageUrl != null) this.MouseDown += delegate
+            if (page.PageUrl != null)
             {
-                Navigate?.Invoke(page.PageUrl);
-            };
-            this.Background = defaultBackgroundBrush;
+                Body.MouseEnter += Body_MouseEnter;
+                Body.MouseLeave += Body_MouseLeave;
+                Body.MouseDown += delegate
+                {
+                    Navigate?.Invoke(page.PageUrl);
+                };
+            }
+            Body.Background = defaultBackgroundBrush;
             InflateSubPages(page.SubPages);
         }
 
@@ -48,16 +53,27 @@ namespace AF.Moa.Navigator
                 };
                 SubPagesContainer.Children.Add(view);
             }
+            FoldButton.Visibility = SubPagesContainer.Children.Count > 0 ? Visibility.Visible : Visibility.Hidden;
         }
 
-        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        private void Body_MouseEnter(object sender, MouseEventArgs e)
         {
-            this.Background = hoverBackgroundBrush;
+            Body.Background = hoverBackgroundBrush;
         }
 
-        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        private void Body_MouseLeave(object sender, MouseEventArgs e)
         {
-            this.Background = defaultBackgroundBrush;
+            Body.Background = defaultBackgroundBrush;
+        }
+
+        private void FoldButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            /**
+             * TODO: Resource로 Image.Source 설정하는 법 확인하기
+             * TODO: 자식의 클릭 이벤트가 부모에게로 가지 않게 설정하기
+             */
+            SubPagesContainer.Visibility = SubPagesContainer.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            // FoldButtonImage.Source = SubPagesContainer.Visibility == Visibility.Visible ? new BitmapImage() : new BitmapImage();
         }
     }
 }

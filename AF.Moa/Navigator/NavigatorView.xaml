@@ -5,15 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AF.Moa.Navigator"
              mc:Ignorable="d"
-             MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave"
              d:DesignWidth="150" d:DesignHeight="40" 
              Orientation="Vertical"
              Margin="1" >
-    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" >
+    <StackPanel x:Name="Body" VerticalAlignment="Center" Orientation="Horizontal">
         <Grid Width="3" Background="Black"/>
         <Label x:Name="Name" Margin="3, 0, 0, 0" FontFamily="맑은 고딕" FontSize="13">Text</Label>
+        <Grid x:Name="FoldButton" MouseDown="FoldButton_MouseDown">
+            <Image x:Name="FoldButtonImage" Width="10" Height="10" Margin="3" Source="/AF.Moa;component/Resources/expend.png"/>
+        </Grid>
     </StackPanel>
-    <StackPanel x:Name="SubPagesContainer" Margin="2">
+    <StackPanel x:Name="SubPagesContainer" Margin="5, 0, 0, 0">
         
     </StackPanel>
 </StackPanel>

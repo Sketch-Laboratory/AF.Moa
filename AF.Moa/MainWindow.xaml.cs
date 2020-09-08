@@ -51,8 +51,11 @@ namespace AF.Moa
                 {
                     Controller.Navigate(url);
                 };
-                this.Navigator.Children.Add(view);
+                Navigator.Children.Add(view);
             }
+            /**
+             * TODO: Navigator 안에서 컨텐츠 스크롤이 되어야 함
+             */
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
