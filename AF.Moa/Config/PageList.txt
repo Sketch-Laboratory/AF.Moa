@@ -1,14 +1,25 @@
 ﻿HomePage=http://www.af.mil/user/indexMain.action?command=&siteId=lccc
-
-군수사령부 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19933&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-군수전산소 공지사항=http://www.af.mil/user/boardList.action?boardId=I_61101&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-코로나19 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19237861&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-
-군수전산소 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_63365&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-휴머니스트 Q&A 게시판=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-만사마 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_60476&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-IT 정보 Q&A=http://www.af.mil/user/boardList.action?boardId=I_7172468&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-
-국방인사정보체계=http://hrportal.mhr.mil/
-mKiss=http://mkiss.mnd.mil/user/Intro.html
-웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login
+공지사항=None
+	군수사령부 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19933&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	군수전산소 공지사항=http://www.af.mil/user/boardList.action?boardId=I_61101&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	코로나19 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19237861&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+즐겨찾기=None
+	군수전산소 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_63365&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	직무위키:최근 바뀜=https://wiki.lc052.lc.af.mil:7779/index.php/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C
+	휴머니스트 Q&A 게시판=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	만사마 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_60476&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	IT 정보 Q&A=http://www.af.mil/user/boardList.action?boardId=I_7172468&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+휴머니스트=http://www.af.mil/user/indexMain.action?siteId=humanist
+	대화=None
+		직업이야기=http://www.af.mil/user/boardList.action?boardId=I_3282180&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		여행이야기=http://www.af.mil/user/boardList.action?boardId=I_6825140&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		맛집이야기=http://www.af.mil/user/boardList.action?boardId=I_8637076&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	아고라=http://www.af.mil/user/boardList.action?boardId=I_2309707&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	고민=http://www.af.mil/user/boardList.action?boardId=I_19355202&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	그리기게시판=http://www.af.mil/user/boardList.action?boardId=I_18192955&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	Air-Wiki=http://www.af.mil/user/boardList.action?boardId=I_3704853&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	플리마켓=http://www.af.mil/user/boardList.action?boardId=I_19355278&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+기타=None
+	국방인사정보체계=http://hrportal.mhr.mil/
+	웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login
+	mKiss=http://mkiss.mnd.mil/user/Intro.html

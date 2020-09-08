@@ -39,18 +39,17 @@ namespace AF.Moa
             Controller.AddOnLoadCompleted(new PostHeaderRemover());
             Controller.Navigate(pages.HomePage);
 
-            InitializeNavigator(pages.List);
+            InitializeNavigator(pages.Pages);
         }
 
-        private void InitializeNavigator(List<Tuple<string, string>> pages)
+        private void InitializeNavigator(List<Node> pages)
         {
             foreach (var page in pages)
             {
-                var view = new NavigatorView();
-                view.Name.Content = page.Item1;
-                view.MouseDown += delegate
+                var view = new NavigatorView(page);
+                view.Navigate += delegate (string url)
                 {
-                    Controller.Navigate(page.Item2);
+                    Controller.Navigate(url);
                 };
                 this.Navigator.Children.Add(view);
             }

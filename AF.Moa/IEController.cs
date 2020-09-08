@@ -31,6 +31,7 @@ namespace AF.Moa
 
         public void Navigate(string url)
         {
+            if (url == null) return;
             Document = null;
             Browser.Navigate(url);
         }
