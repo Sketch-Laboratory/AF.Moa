@@ -1,7 +1,14 @@
 ﻿HomePage=http://www.af.mil/user/indexMain.action?command=&siteId=lccc
+
 군수사령부 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19933&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 군수전산소 공지사항=http://www.af.mil/user/boardList.action?boardId=I_61101&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 코로나19 공지사항=http://www.af.mil/user/boardList.action?boardId=I_19237861&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
-궁수전산소 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_63365&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+
+군수전산소 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_63365&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+휴머니스트 Q&A 게시판=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+만사마 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_60476&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+IT 정보 Q&A=http://www.af.mil/user/boardList.action?boardId=I_7172468&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+
 국방인사정보체계=http://hrportal.mhr.mil/
 mKiss=http://mkiss.mnd.mil/user/Intro.html
+웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login

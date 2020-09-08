@@ -28,14 +28,12 @@ namespace AF.Moa
         IEController Controller = null;
 
         private PageListParser pages = new PageListParser("./Config/PageList.txt");
-        private AutoLoginParser accounts = new AutoLoginParser("./Config/AutoLogin.txt");
 
         public MainWindow()
         {
             InitializeComponent();
             Controller = new IEController(Browser);
-            Controller.AddOnLoadCompleted(AutoLogin);
-            Controller.AddOnLoadCompleted(new WebMailHelper());
+            Controller.AddOnLoadCompleted(new ScriptInvoker());
             Controller.AddOnLoadCompleted(new PostHeaderRemover());
             Controller.Navigate(pages.HomePage);
 
@@ -53,19 +51,6 @@ namespace AF.Moa
                     Controller.Navigate(page.Item2);
                 };
                 this.Navigator.Children.Add(view);
-            }
-        }
-
-        private void AutoLogin(NavigationEventArgs e)
-        {
-            foreach (var account in accounts.List)
-            {
-                if (e.Uri.ToString() == account.Url)
-                {
-                    Controller.SetValue(account.IDFormId, account.ID);
-                    Controller.SetValue(account.PasswordFormId, account.Password);
-                    Controller.Click(account.ConfirmButtonId);
-                }
             }
         }
     }

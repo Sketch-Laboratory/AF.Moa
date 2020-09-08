@@ -65,7 +65,7 @@
     <Compile Include="IEController.cs" />
     <Compile Include="Macro\IMacro.cs" />
     <Compile Include="Macro\PostHeaderRemover.cs" />
-    <Compile Include="Macro\WebMailHelper.cs" />
+    <Compile Include="Macro\ScriptInvoker.cs" />
     <Compile Include="Navigator\NavigatorView.xaml.cs">
       <DependentUpon>NavigatorView.xaml</DependentUpon>
     </Compile>
@@ -78,7 +78,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Config\AutoLoginParser.cs" />
     <Compile Include="Config\PageListParser.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -121,12 +120,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config\AutoLogin.txt">
+    <None Include="Macro\PostHeaders.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Macro\PostHeaders.txt">
+    <None Include="Macro\ScriptIndex.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Macro\Scripts\WebMailAutoLogin.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Macro\Scripts\LGCCAutoLogin.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
