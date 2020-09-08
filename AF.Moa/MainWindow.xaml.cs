@@ -1,4 +1,6 @@
 ﻿using AF.Moa.Config;
+using AF.Moa.Macro;
+using AF.Moa.Navigator;
 using mshtml;
 using System;
 using System.Collections.Generic;
@@ -32,8 +34,25 @@ namespace AF.Moa
         {
             InitializeComponent();
             Controller = new IEController(Browser);
-            Controller.LoadCompleted.Add(AutoLogin);
+            Controller.AddOnLoadCompleted(AutoLogin);
+            Controller.AddOnLoadCompleted(new WebMailHelper());
             Controller.Navigate(pages.HomePage);
+
+            InitializeNavigator(pages.List);
+        }
+
+        private void InitializeNavigator(List<Tuple<string, string>> pages)
+        {
+            foreach (var page in pages)
+            {
+                var view = new NavigatorView();
+                view.Name.Content = page.Item1;
+                view.MouseDown += delegate
+                {
+                    Controller.Navigate(page.Item2);
+                };
+                this.Navigator.Children.Add(view);
+            }
         }
 
         private void AutoLogin(NavigationEventArgs e)

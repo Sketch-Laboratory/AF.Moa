@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using AF.Moa.Config;
+using AF.Moa.Macro;
 using mshtml;
 
 namespace AF.Moa
@@ -13,7 +14,7 @@ namespace AF.Moa
     {
         private WebBrowser Browser { get; } = null;
         private IHTMLDocument3 document { get; set; } = null;
-        public List<Action<NavigationEventArgs>> LoadCompleted { get; internal set; } = new List<Action<NavigationEventArgs>>();
+
 
         public IEController(WebBrowser browser)
         {
@@ -24,7 +25,8 @@ namespace AF.Moa
         private void Browser_LoadCompleted(object sender, NavigationEventArgs e)
         {
             document = (IHTMLDocument3)Browser.Document;
-            foreach (var @event in LoadCompleted) @event(e);
+            foreach (var function in LoadCompletedFunctions) function(e);
+            foreach (var macro in LoadCompletedMacros) macro.OnPageLoaded(this, e);
         }
 
         public void Navigate(string url)
@@ -32,7 +34,22 @@ namespace AF.Moa
             document = null;
             Browser.Navigate(url);
         }
-        
+
+        #region LoadCompleted Event 관련
+        private List<Action<NavigationEventArgs>> LoadCompletedFunctions = new List<Action<NavigationEventArgs>>();
+        private List<IMacro> LoadCompletedMacros = new List<IMacro>();
+
+        internal void AddOnLoadCompleted(Action<NavigationEventArgs> function)
+        {
+            LoadCompletedFunctions.Add(function);
+        }
+
+        internal void AddOnLoadCompleted(IMacro macro)
+        {
+            LoadCompletedMacros.Add(macro);
+        }
+        #endregion
+
         private void Handle(Action @delegate)
         {
             try
@@ -42,7 +59,7 @@ namespace AF.Moa
             catch (NullReferenceException ne)
             {
                 Console.WriteLine($"NullReferenceException: ID 값이 일치하는 객체를 찾을 수 없었습니다.");
-                throw ne;
+                //throw ne;
             }
         }
 
@@ -69,7 +86,7 @@ namespace AF.Moa
 
         public void RunScript(string js)
         {
-
+            Navigate($"javascript:{js}");
         }
     }
 }
