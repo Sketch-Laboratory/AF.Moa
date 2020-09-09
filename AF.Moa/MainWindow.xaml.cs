@@ -27,11 +27,14 @@ namespace AF.Moa
     {
         IEController Controller = null;
 
+        private AttributeParser wConfig = new AttributeParser("./Config/WindowConfig.txt");
         private PageListParser pages = new PageListParser("./Config/PageList.txt");
 
         public MainWindow()
         {
             InitializeComponent();
+            InitializeWindowConfig();
+
             this.MinWidth = Navigator.Width * 2;
             Controller = new IEController(Browser);
             Controller.AddOnLoadCompleted(new ScriptInvoker());
@@ -39,6 +42,27 @@ namespace AF.Moa
             Controller.Navigate(pages.HomePage);
 
             InitializeNavigator(pages.Pages);
+        }
+
+        private void InitializeWindowConfig()
+        {
+            var width = wConfig.GetAttribute("Width");
+            if (width != null)  this.Width = int.Parse(width);
+
+            var height = wConfig.GetAttribute("Height");
+            if (height != null) this.Height = int.Parse(height);
+
+            var wState = wConfig.GetAttribute("WindowState");
+            if(wState != null)
+                this.WindowState = wState == "Maximized" ? WindowState.Maximized : WindowState.Normal;
+
+            this.Closing += delegate (object sender, System.ComponentModel.CancelEventArgs e)
+            {
+                wConfig.SetAttribute("Width", this.Width.ToString());
+                wConfig.SetAttribute("Height", this.Height.ToString());
+                wConfig.SetAttribute("WindowState", this.WindowState.ToString());
+                wConfig.Write();
+            };
         }
 
         private void InitializeNavigator(List<Node> pages)

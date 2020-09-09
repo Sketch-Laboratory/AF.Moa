@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config\AttributeParser.cs" />
     <Compile Include="IEController.cs" />
     <Compile Include="Macro\IMacro.cs" />
     <Compile Include="Macro\PostHeaderRemover.cs" />
@@ -154,6 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Macro\Scripts\BoardViewHotKey.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\WindowConfig.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
