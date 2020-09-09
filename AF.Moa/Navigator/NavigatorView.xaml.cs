@@ -33,9 +33,10 @@ namespace AF.Moa.Navigator
             {
                 Body.MouseEnter += Body_MouseEnter;
                 Body.MouseLeave += Body_MouseLeave;
-                Body.MouseDown += delegate
+                Body.MouseDown += delegate (object sender, MouseButtonEventArgs e)
                 {
                     Navigate?.Invoke(page.PageUrl);
+                    e.Handled = true;
                 };
             }
             Body.Background = defaultBackgroundBrush;
@@ -73,7 +74,15 @@ namespace AF.Moa.Navigator
              * TODO: 자식의 클릭 이벤트가 부모에게로 가지 않게 설정하기
              */
             SubPagesContainer.Visibility = SubPagesContainer.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            // FoldButtonImage.Source = SubPagesContainer.Visibility == Visibility.Visible ? new BitmapImage() : new BitmapImage();
+            var b = new BitmapImage();
+            b.BeginInit();
+            var uriBase = $"/{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name};component/Resources/";
+            b.UriSource = SubPagesContainer.Visibility == Visibility.Visible ?
+                new Uri(uriBase + "expend.png", UriKind.Relative) :
+                new Uri(uriBase + "fold.png", UriKind.Relative);
+            b.EndInit();
+            FoldButtonImage.Source = b;
+            e.Handled = true;
         }
     }
 }

@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="AF.Moa" Icon="Resources/icon.png"
         WindowStartupLocation="CenterScreen"
-        SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged"
         Width="1200" Height="800">
-    <StackPanel Orientation="Horizontal">
-        <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200" CanVerticallyScroll="True" Margin="3"></StackPanel>
-        <WebBrowser x:Name="Browser"/>
-    </StackPanel>
+    <DockPanel>
+        <ScrollViewer DockPanel.Dock="Left">
+            <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200" Margin="3"></StackPanel>
+        </ScrollViewer>
+        <WebBrowser x:Name="Browser" DockPanel.Dock="Right"/>
+    </DockPanel>
 </Window>
