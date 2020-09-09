@@ -1,1 +1,1 @@
-﻿loadMsg();
+﻿try{loadMsg();}catch(e){}

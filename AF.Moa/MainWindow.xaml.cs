@@ -67,13 +67,34 @@ namespace AF.Moa
 
         private void InitializeNavigator(List<Node> pages)
         {
-            foreach (var page in pages)
+            var brushes = new SolidColorBrush[] {
+                new SolidColorBrush(Color.FromRgb(250, 250, 250)),
+                new SolidColorBrush(Color.FromRgb(251, 192, 45)),
+                new SolidColorBrush(Color.FromRgb(126, 87 , 194)),
+                new SolidColorBrush(Color.FromRgb(33, 150, 243)),
+                new SolidColorBrush(Color.FromRgb(244, 81, 30))
+            };
+
+            for(int i= 0; i< pages.Count; i++)
             {
+                var page = pages[i];
+                // 홈페이지 처리
+                if (page.PageName.ToLower() == "homepage")
+                {
+                    Logo.MouseDown += delegate
+                    {
+                        Controller.Navigate(page.PageUrl);
+                    };
+                    continue;
+                }
+
                 var view = new NavigatorView(page);
                 view.Navigate += delegate (string url)
                 {
                     Controller.Navigate(url);
                 };
+                view.Margin = new Thickness(5, 5, 5, 0);
+                view.SetBrush(brushes[i % brushes.Length]);
                 Navigator.Children.Add(view);
             }
         }

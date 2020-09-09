@@ -9,8 +9,10 @@
         WindowStartupLocation="CenterScreen"
         Width="1200" Height="800">
     <DockPanel>
-        <ScrollViewer DockPanel.Dock="Left">
-            <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200" Margin="3"></StackPanel>
+        <ScrollViewer DockPanel.Dock="Left" Background="#dd000000">
+            <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200" Margin="3">
+                <Image x:Name="Logo" Width="174" Height="174" Margin="13" Source="Resources/logo.png" />
+            </StackPanel>
         </ScrollViewer>
         <WebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3"/>
     </DockPanel>

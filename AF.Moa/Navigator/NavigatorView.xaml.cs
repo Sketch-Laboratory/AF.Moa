@@ -20,8 +20,8 @@ namespace AF.Moa.Navigator
     /// </summary>
     public partial class NavigatorView : StackPanel
     {
-        SolidColorBrush defaultBackgroundBrush = new SolidColorBrush(Color.FromArgb(10, 0, 0, 0));
-        SolidColorBrush hoverBackgroundBrush = new SolidColorBrush(Color.FromArgb(80, 0, 0, 0));
+        SolidColorBrush defaultBackgroundBrush = new SolidColorBrush(Color.FromArgb(30, 255, 255, 255));
+        SolidColorBrush hoverBackgroundBrush = new SolidColorBrush(Color.FromArgb(60, 255, 255, 255));
 
         public event Action<string> Navigate = null;
 
@@ -54,7 +54,7 @@ namespace AF.Moa.Navigator
                 };
                 SubPagesContainer.Children.Add(view);
             }
-            FoldButton.Visibility = SubPagesContainer.Children.Count > 0 ? Visibility.Visible : Visibility.Hidden;
+            FoldButton.Visibility = SubPagesContainer.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void Body_MouseEnter(object sender, MouseEventArgs e)
@@ -79,6 +79,21 @@ namespace AF.Moa.Navigator
             b.EndInit();
             FoldButtonImage.Source = b;
             e.Handled = true;
+        }
+
+        /**
+         * 메뉴 앞 띄지 색상 변경
+         */
+        public void SetBrush(SolidColorBrush brush)
+        {
+            this.LeftBorder.Background = brush;
+            foreach (var child in this.SubPagesContainer.Children)
+            {
+                if(child is NavigatorView)
+                {
+                    ((NavigatorView)child).SetBrush(brush);
+                }
+            }
         }
     }
 }
