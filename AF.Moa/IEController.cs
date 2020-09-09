@@ -26,19 +26,19 @@ namespace AF.Moa
         {
             Document = (IHTMLDocument3)Browser.Document;
             foreach (var function in LoadCompletedFunctions) function(e);
-            foreach (var macro in LoadCompletedMacros) macro.OnPageLoaded(this, e);
+            foreach (var macro in Macros) macro.OnPageLoaded(this, e);
         }
 
         public void Navigate(string url)
         {
             if (url == null) return;
-            Document = null;
+            if(!url.StartsWith("javascript")) Document = null;
             Browser.Navigate(url);
         }
 
         #region LoadCompleted Event 관련
         private List<Action<NavigationEventArgs>> LoadCompletedFunctions = new List<Action<NavigationEventArgs>>();
-        private List<IMacro> LoadCompletedMacros = new List<IMacro>();
+        private List<IMacro> Macros = new List<IMacro>();
 
         internal void AddOnLoadCompleted(Action<NavigationEventArgs> function)
         {
@@ -47,7 +47,7 @@ namespace AF.Moa
 
         internal void AddOnLoadCompleted(IMacro macro)
         {
-            LoadCompletedMacros.Add(macro);
+            Macros.Add(macro);
         }
         #endregion
 

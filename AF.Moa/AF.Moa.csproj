@@ -152,5 +152,10 @@
     <Resource Include="Resources\expend.png" />
     <Resource Include="Resources\fold.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Macro\Scripts\BoardViewHotKey.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Navigation;
 
 namespace AF.Moa.Macro
@@ -34,7 +31,18 @@ namespace AF.Moa.Macro
                         Console.WriteLine($"스크립트 파일이 없습니다: {filePath}");
                         continue;
                     }
-                    var js = File.ReadAllText(filePath).Replace("\n", "").Trim();
+                    var js = string.Empty;
+                    foreach (var line in File.ReadAllLines(filePath))
+                    {
+                        var l = line.Trim() + ' ';
+                        if (l.Contains("//"))
+                        {
+                            // '//'주석 처리 코드
+                            l = StringFunction.before(l, "//");
+                        }
+                        js += l;
+                    }
+                    Console.WriteLine($"Run Script:\n\t{js}");
                     controller.RunScript(js);
                 }
             }

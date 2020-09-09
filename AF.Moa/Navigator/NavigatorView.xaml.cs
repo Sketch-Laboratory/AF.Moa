@@ -69,10 +69,6 @@ namespace AF.Moa.Navigator
 
         private void FoldButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            /**
-             * TODO: Resource로 Image.Source 설정하는 법 확인하기
-             * TODO: 자식의 클릭 이벤트가 부모에게로 가지 않게 설정하기
-             */
             SubPagesContainer.Visibility = SubPagesContainer.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             var b = new BitmapImage();
             b.BeginInit();

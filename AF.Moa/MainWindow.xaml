@@ -12,6 +12,6 @@
         <ScrollViewer DockPanel.Dock="Left">
             <StackPanel x:Name="Navigator" Orientation="Vertical" Width="200" Margin="3"></StackPanel>
         </ScrollViewer>
-        <WebBrowser x:Name="Browser" DockPanel.Dock="Right"/>
+        <WebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3"/>
     </DockPanel>
 </Window>
