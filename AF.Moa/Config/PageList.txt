@@ -9,6 +9,7 @@
 	휴머니스트 Q&A 게시판=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	만사마 자유게시판=http://www.af.mil/user/boardList.action?boardId=I_60476&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	IT 정보 Q&A=http://www.af.mil/user/boardList.action?boardId=I_7172468&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+	웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login
 휴머니스트=http://www.af.mil/user/indexMain.action?siteId=humanist
 	대화=None
 		Q&A=http://www.af.mil/user/boardList.action?boardId=I_13801409&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
@@ -59,5 +60,4 @@
 	QuizQuiz=http://www.af.mil/user/boardList.action?boardId=I_213828&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 기타=None
 	국방인사정보체계=http://hrportal.mhr.mil/
-	웹메일=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login
 	mKiss=http://mkiss.mnd.mil/user/Intro.html

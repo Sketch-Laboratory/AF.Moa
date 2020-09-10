@@ -14,6 +14,6 @@
                 <Image x:Name="Logo" Width="174" Height="174" Margin="13" Source="Resources/logo.png" />
             </StackPanel>
         </ScrollViewer>
-        <WebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3"/>
+        <WebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3" LostFocus="Browser_LostFocus"/>
     </DockPanel>
 </Window>

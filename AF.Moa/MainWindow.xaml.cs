@@ -98,5 +98,10 @@ namespace AF.Moa
                 Navigator.Children.Add(view);
             }
         }
+
+        private void Browser_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ((Control)sender).Focus();
+        }
     }
 }
