@@ -15,6 +15,7 @@ namespace AF.Moa.Config
         public AttributeParser(string path)
         {
             this.FilePath = path;
+            if (!File.Exists(path)) return;
             foreach (var line in File.ReadAllLines(path))
             {
                 if (!line.Contains('=')) continue;

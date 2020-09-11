@@ -27,8 +27,9 @@ namespace AF.Moa
     {
         IEController Controller = null;
 
-        private AttributeParser wConfig = new AttributeParser("./Config/WindowConfig.txt");
         private PageListParser pages = new PageListParser("./Config/PageList.txt");
+        private AttributeParser wConfig = new AttributeParser("./Config/WindowConfig.txt");
+        private AttributeParser foldState = new AttributeParser("./Config/FoldState");
 
         public MainWindow()
         {
@@ -62,6 +63,8 @@ namespace AF.Moa
                 wConfig.SetAttribute("Height", this.Height.ToString());
                 wConfig.SetAttribute("WindowState", this.WindowState.ToString());
                 wConfig.Write();
+
+                SaveFoldState();
             };
         }
 
@@ -97,11 +100,60 @@ namespace AF.Moa
                 view.SetBrush(brushes[i % brushes.Length]);
                 Navigator.Children.Add(view);
             }
+
+            LoadFoldState();
         }
 
         private void Browser_LostFocus(object sender, RoutedEventArgs e)
         {
             ((Control)sender).Focus();
+        }
+
+        private void LoadFoldState()
+        {
+            foreach (var attr in foldState.Attributes)
+            {
+                foreach (var nav in Navigator.Children)
+                {
+                    if (nav is NavigatorView) SetCollapseStyle((NavigatorView)nav, attr);
+                }
+            }
+        }
+
+        private void SaveFoldState()
+        {
+            foreach (var nav in Navigator.Children)
+            {
+                if (nav is NavigatorView) GetcollapseStyle((NavigatorView)nav, foldState);
+            }
+            foldState.Write();
+        }
+
+        private void SetCollapseStyle(NavigatorView nav, AttributeParser.Attribute attr, int deep = 0)
+        {
+            var prefix = "";
+            for (int i = 0; i < deep; i++) { prefix += '\t'; }
+            if (prefix + nav.Name.Content.ToString() == attr.Name)
+            {
+                var visibility = attr.Value == true.ToString() ? Visibility.Visible : Visibility.Collapsed;
+                nav.SubPagesContainer.Visibility = visibility;
+            }
+            else foreach (var subNav in nav.SubPagesContainer.Children)
+            {
+                if (subNav is NavigatorView) SetCollapseStyle((NavigatorView)subNav, attr, deep+1);
+            }
+        }
+
+        private void GetcollapseStyle(NavigatorView nav, AttributeParser foldState, int deep = 0)
+        {
+            var prefix = "";
+            for (int i = 0; i < deep; i++) { prefix += '\t'; }
+            var expended = nav.SubPagesContainer.Visibility == Visibility.Visible;
+            foldState.SetAttribute(prefix + nav.Name.Content.ToString(), expended.ToString());
+            foreach (var subNav in nav.SubPagesContainer.Children)
+            {
+                if (subNav is NavigatorView) GetcollapseStyle((NavigatorView)subNav, foldState, deep+1);
+            }
         }
     }
 }

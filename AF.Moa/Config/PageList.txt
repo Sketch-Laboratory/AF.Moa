@@ -52,6 +52,9 @@
 		릴레이=http://www.af.mil/user/boardList.action?boardId=I_6257997&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	락야행=http://www.af.mil/user/boardList.action?boardId=I_6047119&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 	환락행=http://www.af.mil/user/boardList.action?boardId=I_5751872&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
+		명일방주 판=http://www.af.mil/user/boardList.action?boardId=I_5751872&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent&command=view&boardSeq=I_20465691
+		리듬게임 판=http://www.af.mil/user/boardList.action?boardId=I_5751872&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent&command=view&boardSeq=I_20300890
+		뱅드림 판=http://www.af.mil/user/boardList.action?boardId=I_5751872&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent&command=view&boardSeq=I_20134999
 	번역게시판=None
 		번역문학=http://www.af.mil/user/boardList.action?boardId=I_6094080&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
 		가사번역=http://www.af.mil/user/boardList.action?boardId=I_6094106&page=1&search=&column=&categoryId=&categoryDepth=&id=&parent
