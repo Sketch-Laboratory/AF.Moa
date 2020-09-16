@@ -2,3 +2,4 @@
 WebMailAutoLogin.js=http://cloud16.hq.af.mil/servlet/crinity?ptype=sso&paction=login
 HuminsAutoLogin.js=http://hrportal.mhr.mil
 BoardViewHotKey.js=http://www.af.mil/user/boardList.action?command=view
+BoardListPlus.js=http://www.af.mil/user/boardList.action?boardId=
