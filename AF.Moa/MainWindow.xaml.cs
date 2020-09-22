@@ -48,10 +48,10 @@ namespace AF.Moa
         private void InitializeWindowConfig()
         {
             var width = wConfig.GetAttribute("Width");
-            if (width != null)  this.Width = int.Parse(width);
+            if (width != null)  this.Width = float.Parse(width);
 
             var height = wConfig.GetAttribute("Height");
-            if (height != null) this.Height = int.Parse(height);
+            if (height != null) this.Height = float.Parse(height);
 
             var wState = wConfig.GetAttribute("WindowState");
             if(wState != null)
