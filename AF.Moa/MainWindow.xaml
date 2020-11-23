@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AF.Moa"
         mc:Ignorable="d"
-        Title="AF.Moa" Icon="Resources/icon.png"
+        Title="AF.Moa" Icon="Resources/icon.ico"
         WindowStartupLocation="CenterScreen"
         Width="1200" Height="800">
     <DockPanel>
