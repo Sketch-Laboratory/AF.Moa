@@ -32,7 +32,6 @@ namespace AF.Moa
         public void Navigate(string url)
         {
             if (url == null) return;
-            if(!url.StartsWith("javascript")) Document = null;
             Browser.Navigate(url);
         }
 
@@ -87,7 +86,7 @@ namespace AF.Moa
 
         public void RunScript(string js)
         {
-            Navigate($"javascript:{js}");
+            Browser.Navigate($"javascript:{js}");
         }
     }
 }
