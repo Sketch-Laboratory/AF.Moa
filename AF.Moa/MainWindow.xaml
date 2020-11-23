@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AF.Moa"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
         Title="AF.Moa" Icon="Resources/icon.ico"
         WindowStartupLocation="CenterScreen"
@@ -14,6 +15,6 @@
                 <Image x:Name="Logo" Width="174" Height="174" Margin="13" Source="Resources/logo.png" />
             </StackPanel>
         </ScrollViewer>
-        <WebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3" LostFocus="Browser_LostFocus"/>
+        <wpf:ChromiumWebBrowser x:Name="Browser" DockPanel.Dock="Right" Margin="3" LostFocus="Browser_LostFocus"/>
     </DockPanel>
 </Window>

@@ -4,6 +4,6 @@ namespace AF.Moa.Macro
 {
     interface IMacro
     {
-        void OnPageLoaded(IEController controller, NavigationEventArgs e);
+        void OnPageLoaded(IEController controller, string url);
     }
 }
