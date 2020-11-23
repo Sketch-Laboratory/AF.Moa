@@ -20,19 +20,17 @@ namespace AF.Moa.Macro
         {
             Headers = File.ReadAllLines("./Macro/PostHeaders.txt");
         }
-        public void OnPageLoaded(IEController controller, NavigationEventArgs e)
+        public void OnPageLoaded(IEController controller, string url)
         {
-            if (!e.Uri.ToString().StartsWith("http://www.af.mil/user/boardList.action?command=view")) return;
+            if (!url.StartsWith("http://www.af.mil/user/boardList.action?command=view")) return;
             try
             {
-                var container = controller.Document.getElementById("divView");
-                var src = container.innerHTML;
                 foreach (var line in Headers)
                 {
                     if (string.IsNullOrEmpty(line)) continue;
-                    src = src.Replace(line.Trim(), "");
+                    var s = $"document.getElementsById('divView').outerHTML = document.getElementsById('divView').outerHTML.replaceAll('{line.Trim()}', '');";
+                    controller.RunScript(s);
                 }
-                controller.Document.getElementById("divView").innerHTML = src;
             }
             catch(Exception ex)
             {

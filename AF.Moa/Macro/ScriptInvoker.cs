@@ -19,11 +19,11 @@ namespace AF.Moa.Macro
             }
         }
 
-        public void OnPageLoaded(IEController controller, NavigationEventArgs e)
+        public void OnPageLoaded(IEController controller, string url)
         {
             foreach (var scriptIndex in ScriptIndexes)
             {
-                if(e.Uri.ToString().StartsWith(scriptIndex.Item2))
+                if(url.StartsWith(scriptIndex.Item2))
                 {
                     var filePath = $"./Macro/Scripts/{scriptIndex.Item1}";
                     if (!File.Exists(filePath))
